@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TutanRD - Portafolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="menu">
+  <div class="logo">TutanRD</div>
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+  <ul class="menu-links">
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#sobre">Sobre mí</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <video autoplay muted loop id="fondo-video">
+    <source src="video.mp4" type="video/mp4">
+    Tu navegador no soporta videos en HTML5.
+  </video>
+
+  <div class="contenido-hero">
+    <h1 class="titulo">TutanRD</h1>
+    <p class="descripcion">Diseño visual. VFX. Tecnología. Una mente creativa.</p>
+    <a href="#proyectos" class="boton-neon">Ver Proyectos</a>
+  </div>
+</header>
+
+<section id="sobre">
+  <h2>Sobre mí</h2>
+  <p>Soy un creador curioso que ama mezclar creatividad con tecnología...</p>
+  <h3>Mis habilidades</h3>
+  <ul>
+    <li>Diseño web moderno (HTML, CSS)</li>
+    <li>Edición y creación visual (VFX, gráficos)</li>
+    <li>Producción de contenido creativo</li>
+    <li>Streaming y edición de video</li>
+  </ul>
+</section>
+
+<section id="proyectos" class="proyectos">
+  <h2>Proyectos Destacados</h2>
+  <div class="contenedor-proyectos">
+    <div class="proyecto">
+      <img src="port.JPG" alt="Proyecto GTA">
+      <h3>GTA V - Narrativa Visual</h3>
+      <p>Video editado con efectos y narración tipo película. Hecho para TikTok.</p>
+    </div>
+    <div class="proyecto">
+      <img src="vfx.jpg" alt="Proyecto Blender">
+      <h3>Transformación VFX</h3>
+      <p>Creación de efectos tipo Venom y Kolaloka en Blender.</p>
+    </div>
+    <div class="proyecto">
+      <img src="portfolio.jpg" alt="Portafolio">
+      <h3>Diseño gráfico y web</h3>
+      <p>Página moderna con animaciones y estilo responsive. Marca personal TutanRD.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="scroll-reveal">
+  <h2>Contacto</h2>
+  <p>¿Quieres trabajar conmigo o simplemente charlar?</p>
+  <form action="https://formspree.io/f/mvgalbbd" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required> 
+
+    <label for="email">Correo:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<!-- Botón para modo oscuro -->
+<button id="modoOscuroBtn">🌙 Modo Oscuro</button>
+
+<footer>
+  <p>&copy; 2025 TutanRD - Todos los derechos reservados</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+  const sections = document.querySelectorAll("header, section");
+  const showOnScroll = () => {
+    sections.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        sec.classList.add("visible");
+      }
+    });
+  };
+  window.addEventListener("scroll", showOnScroll);
+  window.addEventListener("load", showOnScroll);
+
+  // Modo oscuro
+  const modoBtn = document.getElementById("modoOscuroBtn");
+  modoBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+</script>
+
+</body>
+</html>
